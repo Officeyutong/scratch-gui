@@ -75,12 +75,13 @@ const extractFirstMatchingFile = (filter, relativeDestDir, zipBuffer) => new Pro
         reject(error);
     }
 });
-
+import fsAsync from 'fs/promises';
 const downloadMicrobitHex = async () => {
     const url = 'https://downloads.scratch.mit.edu/microbit/scratch-microbit.hex.zip';
     console.info(`Downloading ${url}`);
-    const response = await crossFetch(url);
-    const zipBuffer = Buffer.from(await response.arrayBuffer());
+    // const response = await crossFetch(url);
+    const response = await fsAsync.readFile('./scratch-microbit-1.2.0.hex.zip');
+    const zipBuffer = Buffer.from(response);
     const relativeHexDir = path.join('static', 'microbit');
     const hexFileName = await extractFirstMatchingFile(
         entry => /\.hex$/.test(entry.fileName),

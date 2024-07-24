@@ -7,7 +7,7 @@ import keyMirror from 'keymirror';
 
 import log from './log.js';
 
-import hexUrl from '../generated/microbit-hex-url.cjs';
+import hexUrl from '../scratch-microbit-1.2.0.hex';
 
 /**
  * @typedef {import('@microbit/microbit-universal-hex').IndividualHex} IndividualHex
