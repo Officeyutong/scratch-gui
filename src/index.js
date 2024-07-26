@@ -6,7 +6,7 @@ import {ScratchPaintReducer} from 'scratch-paint';
 import {setFullScreen, setPlayer} from './reducers/mode';
 import {remixProject} from './reducers/project-state';
 import {setAppElement} from 'react-modal';
-
+import HashParserHOC from './lib/hash-parser-hoc.jsx';
 const guiReducers = {
     locales: LocalesReducer,
     scratchGui: GuiReducer,
@@ -27,5 +27,6 @@ export {
     localesInitialState,
     remixProject,
     setFullScreen,
-    setPlayer
+    setPlayer,
+    HashParserHOC
 };
