@@ -59,7 +59,7 @@ class Storage extends ScratchStorage {
         this.assetHost = assetHost;
     }
     getAssetGetConfig (asset) {
-        return require(`../cdn-assets/${asset.assetId}.${asset.dataFormat}`);
+        return (`/static/cdn-assets/${asset.assetId}.${asset.dataFormat}`);
     }
     getAssetCreateConfig (asset) {
         return {

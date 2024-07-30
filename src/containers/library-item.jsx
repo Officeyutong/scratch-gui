@@ -105,7 +105,7 @@ class LibraryItem extends React.PureComponent {
     }
     render () {
         const iconMd5 = this.curIconMd5();
-        const mod = require(`../cdn-assets/${iconMd5}`);
+        const mod = (`/static/cdn-assets/${iconMd5}`);
         const iconURL = iconMd5 ? mod :
             this.props.iconRawURL;
         return (
